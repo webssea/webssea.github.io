@@ -1,0 +1,909 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "smart-grid"
+
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+	background-color: #333
+	height: 4000px
+
+.wraper
+	max-width: 1280px
+	margin: 0 auto
+
+	
+.v-header
+	height: 581px
+	display: flex
+	// align-items: center
+
+
+
+
+.container
+	max-width: 1280px
+	padding-left: 1rem
+	padding-right: 1rem
+	margin: auto
+
+
+
+.fullscreen-video-wrap
+
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 600px
+	overflow: hidden
+	video
+		display: block
+		margin: 0 auto
+		min-width: 1280px
+		mix-height: 100%
+
+
+.header-overlay
+	height: 600px
+	width: 100%
+	position: absolute
+	top: 0
+	left: 0
+	background-color: #333
+	opacity: 0.65
+	z-index: 1
+
+
+.header-content
+	z-index: 2
+	width: 1280px
+	.header_text
+		max-width: 500px
+		+sm(text-align, center)
+		+md(margin-top, 150px)
+		+sm(margin-top, 150px)
+		+xs(margin-top, 150px)
+		+xs(margin-left, 0)
+		+size-lg(7)
+		+size-md(7)
+		+size-sm(7)
+		+size-xs(12)
+		margin-left: 150px
+		margin-top: 150px
+		display: block
+		line-height: 16px
+		.top_text
+			opacity: 0.65
+			color: #ececec
+			font-family: georgia, sans-serif
+			font-size: 16px
+			font-weight: 400
+			line-height: 51px
+			text-transform: uppercase
+			margin-bottom: -10px
+		h1
+			color: white;
+			+md(font-size, 3.5rem)
+			+sm(font-size, 2.8rem)
+			+xs(font-size, 2.5rem)
+			font-family: OpenSans;
+			font-size: 68px;
+			font-weight: 700;
+			line-height: 58px;
+			text-transform: uppercase;
+			margin-top: 0
+			margin-bottom: 35px
+		.end-text
+			max-width: 400px
+			color: #ececec
+			font-family: OpenSans;
+			font-size: 16px;
+			+md(font-size, 0.8rem)
+			+sm(font-size, 1rem)
+			+sm(max-width, 100%)
+			+xs(font-size, 1rem)
+			font-weight: 300;
+			line-height: 26px;
+
+
+// menu//////////////
+.main_menu
+	// +col()
+	+size(11)
+	max-width: 1280px
+	margin: 0 auto
+	text-align: left
+	top: 0
+	z-index: 9
+	padding-top: 40px 
+	max-height: 80px
+	.logo
+		position: absolute
+		a
+			text-decoration: none
+		.logo_text
+			+xs(font-size, 1.8rem)
+			color: #fff
+			font-family: OpenSans;
+			font-size: 32px;
+			font-weight: 600;
+			line-height: 25px;
+			text-transform: uppercase
+
+
+.menu__links
+	ul
+
+		display: flex
+		justify-content: flex-end
+		list-style-type: none
+		margin-top: -2px
+
+
+		li
+			text-decoration: none
+			+size(1.2)
+			+size-md(1.6)
+			+size-sm(1.8)
+			a
+
+	
+ 
+.menu__icon 
+	display: none
+	width: 45px
+	height: 35px
+	position: relative
+	cursor: pointer
+
+ 
+.menu__icon span 
+	display: block
+	position: absolute
+	height: 5px
+	width: 36px
+	background-color: #d4842e
+	opacity: 1
+	left: 0
+	transform: rotate(0deg)
+	transition: .25s ease-in-out
+
+ 
+.menu__icon span:nth-child(1) 
+	top: 0px
+ 
+.menu__icon span:nth-child(2), .menu__icon span:nth-child(3) 
+	top: 13px
+
+ 
+.menu__icon span:nth-child(4) 
+	top: 26px
+
+ 
+.menu__links-item
+	display: inline-block
+	margin: 0 20px
+	text-transform: uppercase
+	text-decoration: none
+	color: #aeaeae;
+	font-family: OpenSans;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 18px;
+
+ 
+.menu__links-item:hover 
+	color: #fff
+	text-decoration: none
+	// padding-bottom: 5px
+	border-bottom: 2px solid #d4842e;
+
+
+ 
+.main_menu.menu_state_open .menu__icon span:nth-child(1) 
+	top: 18px
+	width: 0%
+	left: 50%
+
+ 
+.main_menu.menu_state_open .menu__icon span:nth-child(2) 
+	transform: rotate(45deg)
+
+ 
+.main_menu.menu_state_open .menu__icon span:nth-child(3) 
+	transform: rotate(-45deg)
+
+ 
+.main_menu.menu_state_open .menu__icon span:nth-child(4) 
+	top: 18px
+	width: 0%
+	left: 50%
+
+ 
+.main_menu.menu_state_open .menu__links 
+	opacity: 1
+
+// menu/////////////////
+// end header///////////////////
+.content
+	background-color: #151c1e
+
+
+// // slider/////////////////
+
+
+.owl-item>div 
+	cursor: pointer
+	margin: 4% 10%
+	margin-left: 0
+	margin-right: 0
+	transition: margin 0.4s ease
+
+
+
+.owl-item.center > div 
+	cursor: auto;
+	margin: 0;
+	transform: scale(1.3)
+	z-index: 100
+
+.owl-carousel
+
+	.center
+		z-index: 999
+
+	.active
+		transform: scale(1)
+	.owl-nav
+		position: absolute
+		top: 31%
+		width: 100%
+		> div
+			color: white
+			position: absolute
+			font-size: 55px
+			&.owl-prev
+				left: 68px
+				+sm(left, 15px)
+				+xs(display, none)
+			&.owl-next
+				right: 68px
+				+sm(right, 15px)
+				+xs(display, none)
+
+
+
+
+
+// text slider///////////////
+.slider_text
+	display: flex
+	height: 300px
+	+xs(height, 150px)
+	justify-content: center
+	flex-direction: column
+	p
+		// padding-top: 120px
+		text-align: center
+		height: 15px;
+		opacity: 0.65
+		color: #ececec;
+		font-family: Georgia;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 58px;
+		text-transform: uppercase;
+	h2
+		text-align: center
+		color: white;
+		font-family: OpenSans;
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 58px;
+		text-transform: uppercase;
+// PARALLAX////////////////////////////////////
+
+
+// parallax//////////////////
+
+.parallax
+
+	max-width: 1209px
+	height: 701px
+	&-wrap
+		padding-top: 200px
+		position: relative
+		max-width: 100%
+
+	&-border
+		align-items: center
+		justify-content: space-around
+		display: flex
+		+size(9)
+		max-width: 1070px
+		height: 514px
+		border: 10px solid #d4842e
+		// +sm(height, 1070px)
+		
+		margin: 0 auto
+		p
+			max-width: 1070px
+			position: relative
+			color: white
+			font-family: OpenSans, sans-serif
+			font-size: 212px
+			+lg(font-size, 11rem)
+			+md(display, none)
+			font-weight: 300
+			text-align: center
+			text-transform: uppercase
+			line-height: 83px
+			z-index: 1
+.parallax_text
+	+xs(display, none)
+	+sm(display, none)
+	text-align: center
+	opacity: 0.65
+	color: #ececec
+	font-family: Georgia;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 69px;
+	text-transform: uppercase;
+	p
+		margin-top: 10px
+
+
+.scene
+	max-width: 1280px
+	position: absolute
+	bottom: -114px
+	left: 0
+	overflow: hidden
+	right: 0
+	height: 839px
+	z-index: 50
+	padding-bottom: 100px
+	// padding-top: 100px
+	>div
+		position: absolute
+		bottom: 0
+.scene_m
+	display: none
+.scene
+	+sm(top, 23%)
+	>div.n1
+		left: 1%
+		top: 21%
+		+sm(left,-5%)
+		+sm(top,33%)
+		z-index: 3
+		img
+			max-width: 100%
+div
+	&.n2
+		z-index: 1
+		left: 10%
+		bottom: -8%
+		+sm(left,17%)
+		+sm(top,21%)
+		img
+			max-width: 100%
+			+sm(max-width, 63%)
+	&.n3
+		z-index: 1
+		left: 21%
+		bottom: 2%
+
+		img
+			max-width: 100%
+			+sm(max-width, 63%)
+	&.n4
+		z-index: 2
+		left: 18%
+		top: 25%
+
+
+		img
+			max-width: 100%
+			+sm(max-width, 63%)
+	&.n5
+		left: 28%
+		z-index: 0
+		top: 21%
+
+	
+		img
+			max-width: 100%
+			+sm(max-width, 63%)
+
+	&.n6
+		z-index: 3
+		top: 25%
+		left: 46%
+		img
+			max-width: 100%
+.k
+	top: 35%
+	left: 35%
+	z-index: 2
+	+sm(left,29%)
+	+sm(top,30%)
+
+	img
+		+sm(z-index, 99)
+		max-width: 100%
+
+		// meil_end//////////////////////////////////////
+.mail_end
+	
+	align-items: center
+	justify-content: space-around
+	flex-direction: column
+	display: flex
+	+sm(padding-bottom, 100px)
+	padding-bottom: 400px
+	+sm(margin-top, 100px)
+	.mail_text
+		p
+			margin-top: 50px
+			margin-bottom: 40px
+			color: white
+			font-family: OpenSans
+			font-size: 30px
+			font-weight: 700
+			line-height: 58px
+			text-transform: uppercase
+			text-align: center
+	form
+		z-index: 100
+		p
+			color: #d4842e;
+			font-family: OpenSans;
+			font-size: 16px;
+			font-weight: 300;
+			line-height: 8px;
+		.name 
+			+xs(width, 282px)
+			+sm(background-color, #fff)
+			width: 420px
+			border: none
+			border-bottom: 1px solid #4e4e4e
+			background-color: #151C1E
+			// border-bottom: 2px solid #d4842e;
+			margin-bottom: 60px
+			color: #ececec;
+			font-family: OpenSans;
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 8px;
+			&:focus
+				border: none
+				border-bottom: 2px solid #d4842e
+
+
+
+
+		.mail
+			+sm(background-color, #fff)
+			+xs(width, 282px)
+			width: 420px
+			border: none
+			border-bottom: 1px solid #4e4e4e
+			background-color: #151C1E
+			color: silver;
+			font-family: OpenSans;
+			font-size: 20px;
+			font-weight: 300;
+			line-height: 8px;
+			margin-bottom: 60px
+			&:focus
+				border: none
+				border-bottom: 2px solid #d4842e
+
+		.date
+			+sm(background-color, #fff)
+			width: 179px
+			border: none
+			border-bottom: 1px solid #4e4e4e
+			background-color: #151C1E
+			color: silver;
+			font-family: OpenSans;
+			font-size: 20px;
+			font-weight: 300;
+			margin-bottom: 60px
+			&:focus
+				border: none
+				border-bottom: 2px solid #d4842e
+		textarea
+			+sm(background-color, #fff)
+			+xs(width, 282px)
+			width: 420px
+			border: none
+			background-color: #151C1E
+			border-bottom: 1px solid #4e4e4e
+			margin-bottom: 60px
+			color: silver;
+			font-family: OpenSans;
+			font-size: 20px;
+			font-weight: 300;
+			&:focus
+				border: none
+				border-bottom: 2px solid #d4842e
+
+		button
+			display: block
+			margin: 0 auto
+			background-color: #727272;
+			width: 206px;
+			height: 51px;
+			border-radius: 26px;
+			border: none
+			color: white
+			&:active
+				background-color: #f39735;
+				box-shadow: 0 7px 8px rgba(212, 132, 46, 0.4);
+			&:hover
+				background-color: #d4842e;
+				box-shadow: 0 18px 40px rgba(212, 132, 46, 0.4);
+
+
+
+
+
+//медиа запросы для топ меню/////////////////////////
+@media screen and (max-width: 640px)
+
+	.content
+		background-color: #fff
+
+	.mail_end
+		margin-top: 100px
+
+	.main_menu
+
+		.logo
+			position: absolute
+			display: inline-block
+			right: 0
+			left: 0
+			text-align: center
+			z-index: 9999
+			.logo_text
+				
+				white-space: nowrap
+				color: #fff
+				font-family: OpenSans;
+				font-size: 32px;
+				font-weight: 600;
+				line-height: 18px
+				text-transform: uppercase;
+				a
+
+
+
+
+
+
+	.menu__icon
+		display: inline-block
+		width: 50px
+		height: 50px
+		z-index: 99999
+
+
+	.menu__links 
+		position: absolute
+		padding-top: 92px
+		display: block
+		top: 0
+		left: 0px
+		width: 100vw
+		// background-color: rgba(11, 13, 13, 0.9)
+		background-color: #0b0d0d
+		z-index: 1000
+		overflow: auto
+		opacity: 0
+		// margin-top: 200px
+		ul
+			display: block
+			padding: 0
+			margin: 0
+
+
+
+
+	.menu__links-item 
+		display: block
+		padding: 15px 30px
+		color: #ececec
+		font-family: OpenSans
+		font-size: 20px
+		font-weight: 600
+		line-height: 26px
+		text-transform: capitalize
+		border-top: 1px solid dimgrey
+		width: 100vw
+		margin-left: 0
+		&:hover
+			border-bottom: none
+			padding-bottom: none
+			color: #d4842e
+
+		ul
+			li
+				border-top: 2px solid #d4842e
+				a
+					margin: 0
+					color: #d4842e
+					width: 100%
+					&::hover
+	.orange
+		border-top: 1px solid #d4842e
+		// slider///////////////////////////////////////////////
+	.slider_text
+		h2
+			display: none
+			opacity: 0.65
+			color: #ececec
+			font-family: Georgia;
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 58px;
+			text-transform: uppercase;
+
+
+		// parallax//////////////////////
+
+	.scene
+		display: none
+
+	.parallax
+
+		max-width: 800px
+		height: 1200px
+		&-wrap
+			padding-top: 150px
+			position: relative
+			max-width: 100%
+
+		&-border
+			align-items: center
+			justify-content: space-around
+			display: flex
+			+size(9)
+			height: 1070px
+			max-width: 514px
+
+
+		
+
+
+			
+	.scene_m
+		display: block
+		max-width: 800px
+		position: absolute
+		bottom: -297px
+		left: 0
+		overflow: hidden
+		right: 0
+		height: 1472px
+		z-index: 80
+		>div
+			position: absolute
+			bottom: 0
+	.scene_m
+		>div.k1
+			left: 6%
+			top: 20%
+			z-index: 3
+			img
+				max-width: 100%
+	div
+		&.k2
+			z-index: 1
+			left: 23%
+			top: 106px
+			img
+				max-width: 100%
+		&.k3
+			z-index: 1
+			left: 15%
+			bottom: -10%
+			img
+				max-width: 85%
+		&.k4
+			z-index: 2
+			left: 19%
+			top: 39%
+
+			img
+				max-width: 100%
+		&.k5
+			left: 24%
+			z-index: 0
+			top: 36%
+	
+			img
+				max-width: 100%
+
+		&.k6
+			z-index: 3
+			top: 33%
+			left: 37%
+			img
+				max-width: 100%
+	.K
+		top: 37%
+		left: 16%
+		z-index: 2
+
+		img
+			max-width: 100%
+			margin: 0 auto
+
+
+
+
+
+@media screen and (max-width: 420px)
+
+	.mail_end
+		margin-top: 100px
+
+	.parallax-border
+		max-width: 277px;
+		max-height: 578px;
+
+
+	.parallax
+
+		max-width: 400px
+		height: 600px
+		&-wrap
+			padding-top: 200px
+			position: relative
+			max-width: 100%
+
+		&-border
+			align-items: center
+			justify-content: space-around
+			display: flex
+			+size(12)
+
+		
+	.scene
+		display: none
+
+			
+	.scene_m
+		// display: flex
+		display: block
+		max-width: 800px
+		position: absolute
+		top: 52px
+		left: 0
+		overflow: hidden
+		right: 0
+		height: 1430px
+		z-index: 80
+		>div
+			position: absolute
+			bottom: 0
+	.scene_m
+		>div.k1
+			left: 0%
+			top: 21%
+			z-index: 3
+			img
+				max-width: 96%
+	div
+		&.k2
+			z-index: 1
+			left: 30%
+			top: 17%
+			img
+				max-width: 70%
+		&.k3
+			z-index: 1
+			left: 8%
+			bottom: 37%
+			img
+				max-width: 90%
+		&.k4
+			z-index: 2
+			left: 24%
+			top: 24%
+
+			img
+				max-width: 85%
+		&.k5
+			left: 22%
+			z-index: 0
+			top: 21%
+	
+			img
+				max-width: 85%
+
+		&.k6
+			z-index: 3
+			top: 28%
+			left: 36%
+			img
+				max-width: 60%
+	.K
+		top: 30%
+		left: 20%
+		z-index: 2
+
+		img
+			max-width: 80%
+			margin: 0 auto
+
+
+	.menu__icon
+		top: -5px
+		right: -2px
+		width: 40px
+		height: 30px
+		span
+			height: 6px
+
+
+	.header_text
+		margin-top: 100px
+
+
+
+
+
+
+
+
+
+
+@import "media" // Всегда в конце
