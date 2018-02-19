@@ -4382,7 +4382,7 @@ div.n5 img {
 
 div.n6 {
   z-index: 3;
-  top: 25%;
+  top: 20%;
   left: 46%;
 }
 
@@ -4536,12 +4536,6 @@ div.n6 img {
   background-color: #d4842e;
   -webkit-box-shadow: 0 18px 40px rgba(212, 132, 46, 0.4);
           box-shadow: 0 18px 40px rgba(212, 132, 46, 0.4);
-}
-
-.img-responsive {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 /*==========  Desktop First  ==========*/
@@ -5003,6 +4997,10 @@ div.n6 img {
     display: none;
   }
 
+  .slider_text {
+    height: 150px;
+  }
+
   .parallax_text {
     display: none;
   }
@@ -5083,12 +5081,12 @@ div.n6 img {
 
   .scene_m > div.k1 {
     left: 0%;
-    top: 21%;
+    top: 14%;
     z-index: 3;
   }
 
   .scene_m > div.k1 img {
-    max-width: 96%;
+    max-width: 84%;
   }
 
   div.k2 {
@@ -5133,7 +5131,7 @@ div.n6 img {
 
   div.k6 {
     z-index: 3;
-    top: 29%;
+    top: 26%;
     left: 36%;
   }
 
